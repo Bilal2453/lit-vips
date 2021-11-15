@@ -2,12 +2,12 @@
 
 local ffi = require "ffi"
 
-local verror = require "vips.verror"
-local version = require "vips.version"
-local gvalue = require "vips.gvalue"
-local vobject = require "vips.vobject"
-local voperation = require "vips.voperation"
-local Image = require "vips.Image"
+local verror = require "verror"
+local version = require "version"
+local gvalue = require "gvalue"
+local vobject = require "vobject"
+local voperation = require "voperation"
+local Image = require "Image"
 
 local type = type
 local error = error

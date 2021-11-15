@@ -4,12 +4,12 @@
 local ffi = require "ffi"
 local bit = require "bit"
 
-local verror = require "vips.verror"
-local version = require "vips.version"
-local log = require "vips.log"
-local gvalue = require "vips.gvalue"
-local vobject = require "vips.vobject"
-local Image = require "vips.Image"
+local verror = require "verror"
+local version = require "version"
+local log = require "log"
+local gvalue = require "gvalue"
+local vobject = require "vobject"
+local Image = require "Image"
 
 local band = bit.band
 local type = type

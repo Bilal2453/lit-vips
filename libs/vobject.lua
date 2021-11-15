@@ -3,9 +3,9 @@
 
 local ffi = require "ffi"
 
-local verror = require "vips.verror"
-local log = require "vips.log"
-local gvalue = require "vips.gvalue"
+local verror = require "verror"
+local log = require "log"
+local gvalue = require "gvalue"
 
 local print = print
 local error = error

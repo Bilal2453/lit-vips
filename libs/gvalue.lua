@@ -3,9 +3,9 @@
 
 local ffi = require "ffi"
 
-local verror = require "vips.verror"
-local version = require "vips.version"
-local Image = require "vips.Image"
+local verror = require "verror"
+local version = require "version"
+local Image = require "Image"
 
 local type = type
 local error = error

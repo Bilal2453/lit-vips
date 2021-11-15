@@ -1,6 +1,10 @@
-# lua-vips
+# lit-vips
 
-[![Build Status](https://travis-ci.org/libvips/lua-vips.svg?branch=master)](https://travis-ci.org/libvips/lua-vips)
+This is a fork of the [lua-vips](https://github.com/libvips/lua-vips) bindings ported to Lit package manager, and the Luvit platform.
+
+Be sure to download the shared binary before proceeding to install this. Read below for more info.
+
+# lua-vips
 
 This is a Lua binding for the [libvips image processing
 library](http://libvips.github.io/libvips).  libvips
@@ -17,10 +21,10 @@ see how to call libvips operations.
 # Example
 
 [Install the libvips shared
-library](https://libvips.github.io/libvips/install.html), then install this rock with:
+library](https://libvips.github.io/libvips/install.html), then install this package with:
 	
 ```shell
-luarocks install lua-vips
+lit install Bilal2453/lit-vips
 ```
 
 Example:

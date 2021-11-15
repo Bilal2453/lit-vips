@@ -4,7 +4,7 @@ local ffi = require "ffi"
 
 local vips_lib = ffi.load(ffi.os == "Windows" and "libvips-42.dll" or "vips")
 
-require "vips.cdefs"
+require "cdefs"
 
 local result = vips_lib.vips_init("lua-vips")
 if result ~= 0 then
@@ -15,13 +15,13 @@ if result ~= 0 then
 end
 
 local vips = {
-    verror = require "vips.verror",
-    version = require "vips.version",
-    log = require "vips.log",
-    gvalue = require "vips.gvalue",
-    vobject = require "vips.vobject",
-    voperation = require "vips.voperation",
-    Image = require "vips.Image_methods",
+    verror = require "verror",
+    version = require "version",
+    log = require "log",
+    gvalue = require "gvalue",
+    vobject = require "vobject",
+    voperation = require "voperation",
+    Image = require "Image_methods",
 }
 
 function vips.leak_set(leak)
