@@ -19,7 +19,13 @@ local unpack = unpack
 local tonumber = tonumber
 local str_gsub = string.gsub
 
-local vips_lib = ffi.load(ffi.os == "Windows" and "libvips-42.dll" or "vips")
+local vips_lib
+if ffi.os == "Windows" then
+    local bin = './' .. ffi.os .. "-" .. ffi.arch .. '/'
+    vips_lib = module:action(bin .. "libvips-42.dll", ffi.load)
+else
+    vips_lib = ffi.load("vips")
+end
 
 local REQUIRED = 1
 local CONSTRUCT = 2 -- luacheck: ignore

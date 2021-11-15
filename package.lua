@@ -1,6 +1,6 @@
 return {
-  name = "lit-vips",
-  version = "1.1.10",
+  name = "Bilal2453/vips",
+  version = "0.0.1",
   description = "Lua binding for the libvips image processing library ported for Luvit.",
   tags = { "image-processing", "images", "vips", "libvips", "image-manipulations" },
   license = "MIT",
@@ -11,5 +11,6 @@ return {
     "**.lua",
     "!example",
     "!test*",
+    "$OS-$ARCH/*",
   }
 }

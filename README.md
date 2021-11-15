@@ -24,7 +24,7 @@ see how to call libvips operations.
 library](https://libvips.github.io/libvips/install.html), then install this package with:
 	
 ```shell
-lit install Bilal2453/lit-vips
+lit install Bilal2453/vips
 ```
 
 Example:

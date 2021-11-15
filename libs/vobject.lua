@@ -14,8 +14,9 @@ local collectgarbage = collectgarbage
 local vips_lib
 local gobject_lib
 if ffi.os == "Windows" then
-    vips_lib = ffi.load("libvips-42.dll")
-    gobject_lib = ffi.load("libgobject-2.0-0.dll")
+    local bin = './' .. ffi.os .. "-" .. ffi.arch .. '/'
+    vips_lib = module:action(bin .. "libvips-42.dll", ffi.load)
+    gobject_lib = module:action(bin .. "libgobject-2.0-0.dll", ffi.load)
 else
     vips_lib = ffi.load("vips")
     gobject_lib = vips_lib
