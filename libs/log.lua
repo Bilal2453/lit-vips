@@ -1,4 +1,5 @@
--- simple logging
+--- simple logging
+----
 
 local logging_enabled = false
 

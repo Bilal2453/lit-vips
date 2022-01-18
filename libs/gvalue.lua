@@ -1,5 +1,6 @@
--- manipulate GValue objects from lua
--- pull in gobject via the vips library
+--- manipulate GValue objects from lua
+--- pull in gobject via the vips library
+----
 
 local ffi = require "ffi"
 
@@ -14,10 +15,9 @@ local vips_lib
 local gobject_lib
 local glib_lib
 if ffi.os == "Windows" then
-    local bin = './' .. ffi.os .. "-" .. ffi.arch .. '/'
-    vips_lib = module:action(bin .. "libvips-42.dll", ffi.load)
-    gobject_lib = module:action(bin .. "libgobject-2.0-0.dll", ffi.load)
-    glib_lib = module:action(bin .. "libglib-2.0-0.dll", ffi.load)
+    vips_lib = ffi.load("libvips-42.dll")
+    gobject_lib = ffi.load("libgobject-2.0-0.dll")
+    glib_lib = ffi.load("libglib-2.0-0.dll")
 else
     vips_lib = ffi.load("vips")
     gobject_lib = vips_lib

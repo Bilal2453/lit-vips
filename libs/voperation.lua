@@ -1,5 +1,6 @@
--- manage VipsOperation
--- lookup and call operations
+--- manage VipsOperation
+--- lookup and call operations
+----
 
 local ffi = require "ffi"
 local bit = require "bit"
@@ -19,13 +20,7 @@ local unpack = unpack
 local tonumber = tonumber
 local str_gsub = string.gsub
 
-local vips_lib
-if ffi.os == "Windows" then
-    local bin = './' .. ffi.os .. "-" .. ffi.arch .. '/'
-    vips_lib = module:action(bin .. "libvips-42.dll", ffi.load)
-else
-    vips_lib = ffi.load("vips")
-end
+local vips_lib = ffi.os == "Windows" and ffi.load("libvips-42.dll") or ffi.load("vips")
 
 local REQUIRED = 1
 local CONSTRUCT = 2 -- luacheck: ignore

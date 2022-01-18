@@ -1,4 +1,5 @@
--- all the C declarations for lua-vips
+--- all the C declarations for lua-vips
+----
 
 local ffi = require "ffi"
 

@@ -1,11 +1,16 @@
 -- top include for lua-vips
 
 local ffi = require "ffi"
+local uv -- Lazy required
 
-local vips_lib
+local vips_lib, old_cwd
 if ffi.os == "Windows" then
-    local bin = './' .. ffi.os .. "-" .. ffi.arch .. '/'
-    vips_lib = module:action(bin .. "libvips-42.dll", ffi.load)
+    local bin = module.dir .. '/' .. ffi.os .. "-" .. ffi.arch .. '/'
+    -- Workaround for LoadPackagedLibrary limitations on Windows
+    uv = require "uv"
+    old_cwd = uv.cwd()
+    uv.chdir(bin) -- Change working directory to the binaries directory
+    vips_lib = ffi.load("libvips-42.dll")
 else
     vips_lib = ffi.load("vips")
 end
@@ -29,6 +34,11 @@ local vips = {
     voperation = require "voperation",
     Image = require "Image_methods",
 }
+
+-- Change working directory to original if it was changed earlier
+if old_cwd then
+    uv.chdir(old_cwd)
+end
 
 function vips.leak_set(leak)
     vips_lib.vips_leak_set(leak)

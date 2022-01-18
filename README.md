@@ -2,7 +2,8 @@
 
 This is a fork of the [lua-vips](https://github.com/libvips/lua-vips) bindings ported to Lit package manager, and the Luvit platform.
 
-Be sure to download the shared binary before proceeding to install this. Read below for more info.
+On Windows x64 most of the needed binaries are pre-provided for ease-of-use, on the rest of the platforms you will have to manually install libvips (read below for instructions).
+On Linux and Mac, that is as easy as running a single command to install libvips-dev; depending on your package manager.
 
 # lua-vips
 
@@ -23,8 +24,14 @@ see how to call libvips operations.
 [Install the libvips shared
 library](https://libvips.github.io/libvips/install.html), then install this package with:
 	
+***NOTE: Due to a bug in Lit, you will not be able to use the following command.***
 ```shell
 lit install Bilal2453/vips
+```
+
+An alternative way is to just Git clone the current repo:
+```sh
+git clone https://github.com/Bilal2453/lit-vips.git
 ```
 
 Example:

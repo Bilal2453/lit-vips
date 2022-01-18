@@ -1,5 +1,6 @@
--- manage VipsObject
--- abstract base class for voperation and vimage
+--- manage VipsObject
+--- abstract base class for voperation and vimage
+-----
 
 local ffi = require "ffi"
 
@@ -14,9 +15,8 @@ local collectgarbage = collectgarbage
 local vips_lib
 local gobject_lib
 if ffi.os == "Windows" then
-    local bin = './' .. ffi.os .. "-" .. ffi.arch .. '/'
-    vips_lib = module:action(bin .. "libvips-42.dll", ffi.load)
-    gobject_lib = module:action(bin .. "libgobject-2.0-0.dll", ffi.load)
+    vips_lib = ffi.load("libvips-42.dll")
+    gobject_lib = ffi.load("libgobject-2.0-0.dll")
 else
     vips_lib = ffi.load("vips")
     gobject_lib = vips_lib

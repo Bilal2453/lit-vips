@@ -1,14 +1,9 @@
--- detect and test libvips version
+--- detect and test libvips version
+----
 
 local ffi = require "ffi"
 
-local vips_lib
-if ffi.os == "Windows" then
-    local bin = './' .. ffi.os .. "-" .. ffi.arch .. '/'
-    vips_lib = module:action(bin .. "libvips-42.dll", ffi.load)
-else
-    vips_lib = ffi.load("vips")
-end
+local vips_lib = ffi.os == "Windows" and ffi.load("libvips-42.dll") or ffi.load("vips")
 
 local version = {}
 
