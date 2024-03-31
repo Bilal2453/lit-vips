@@ -1,6 +1,9 @@
 # lit-vips
 
+***NOTE: *** This fork is currently outdated and requires a sync with upstream. A PR is welcome.
+
 This is a fork of the [lua-vips](https://github.com/libvips/lua-vips) bindings ported to Lit package manager, and the Luvit platform.
+The main difference between this fork and upstream is that loading code was altered on Windows systems to allow `ffi.load` to load the Vips Windows binaries shipped in this repo.
 
 On Windows x64 most of the needed binaries are pre-provided for ease-of-use, on the rest of the platforms you will have to manually install libvips (read below for instructions).
 On Linux and Mac, that is as easy as running a single command to install libvips-dev; depending on your package manager.
