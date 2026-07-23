@@ -27,7 +27,6 @@ see how to call libvips operations.
 [Install the libvips shared
 library](https://libvips.github.io/libvips/install.html), then install this package with:
 	
-***NOTE: Due to a bug in Lit, you will not be able to use the following command.***
 ```shell
 lit install Bilal2453/vips
 ```
